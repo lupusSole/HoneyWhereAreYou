@@ -1,0 +1,29 @@
+{% extends 'honey/base.html' %}
+{% block content%}
+
+{% load static %}
+
+
+
+<div style="box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.1);
+transition: all 200ms ease-in-out; padding: 5%;"> 
+<h2 style="text-align: center; font-weight: lighter;">Get In Touch</h2>
+
+
+<h2 style="font-weight: bold; color: chartreuse;" class="animate__animated animate__rotateInDownLeft">{{success}}</h2>
+
+
+
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p }}
+    <input type="submit" class="btn btn-dark" style="color: yellow !important;" value="Submit">
+
+</form>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'honey/base.html' %}
+{% block content%}
+
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="https://images.unsplash.com/photo-1587049352824-f7e128d4ebe5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGhvbmV5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Honey Where Are You?</h1>
+        <p class="lead">Beekeeping service, on location honey extraction service, extraction demonstrations, honeybee education, honey sales, hive product sales.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a type="button" style="color: yellow !important;" href="#contact" class="btn btn-dark btn-lg px-4 me-md-2">Book Now</a>
+          <a type="button" href="{% url 'contact' %}" style="color:  yellow !important;" class="btn btn-outline-dark btn-lg px-4">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div style="padding-left: 2.5%; padding-right: 2.5%">
+
+
+<div style="padding-top: 2.5%; padding-top: 2.5%">
+
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://bucket.mlcdn.com/a/3366/3366685/images/c6e0cdef3bd0af821448dd593ce3657e401a4808.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Honey picture.</h1>
+            <p>Our mobile extraction trailer.</p>
+            <p><a class="btn btn-lg btn-dark" style="color: yellow !important;" href="#contact">Book now </a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG9uZXl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 style="color: white;">Freshly extracted honey.</h1>
+            <p>Freshly extracted honeycomb right off of our process.</p>
+            <p><a class="btn btn-lg btn-dark" style="color: yellow !important;" href="#contact">Book Now</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="https://images.unsplash.com/photo-1586106901159-815a40383396?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvbmV5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></img>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Honey on comb.</h1>
+            <p>A beautiful honeybee freshly on a comb we extracted.</p>
+            <p><a class="btn btn-lg btn-dark" style="color: yellow !important;" href="#contact">Book my extraction</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+ 
+  <h1  style="text-align: left; font-weight: lighter; padding-bottom: 1.5%; padding-top: 1.5%;">Updates</h1>
+
+   {% for update in updates %}
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">{{ update.headline }}</h2>
+        <p class="lead">{{ update.description }}</p>
+        <small><i class="bi bi-geo-alt"></i> {{ update.location }}</small>
+        <small><i class="bi bi-calendar-date"></i> {{ update.dates }}</small>
+        <br>
+        <br>
+        <a class="btn btn-dark" href="#contact" style="color:  yellow !important;">Book my extraction</a>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="https://images.unsplash.com/photo-1526399743290-f73cb4022f48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fG1hcmtldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+    {% endfor %}
+
+  
+
+
+    <h1 style="text-align: left; padding-top: 1.5%; padding-bottom: 1.5%; font-weight: lighter;">Booking </h1>
+    <div class="booking" id="contact">
+
+      <!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/pattersonkyle511/honey-extraction?hide_gdpr_banner=1&primary_color=f5ff00" style="min-width:320px;height:630px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+
+    </div>
+  </div>
+
+{% endblock %}
